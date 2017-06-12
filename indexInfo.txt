@@ -1,0 +1,12 @@
+index
+index.1.html
+
+index.2.html
+modify use mainController2.js
+--move the main content to the scope of your controller
+-remove all three of the <article> objects from your webpage. Replace them with the following content:
+- call mainController2
+
+index.3.html
+- Modify your MainController.js to change your app.controller initialization. call http
+

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+      <title>my web page</title>
+        <link href="content/app.css" rel = "stylesheet"/> 
+        <link href="content/bootstrap.min_v3.3.7.css" rel = "stylesheet"/> 
+        <link href= "scripts/bootstrap.min_v3.3.7.js" rel = "text/javascript"/> 
+       
+       <script src="scripts/angular.min_v1.5.8.js"></script>
+       <script src="scripts/angular-sanitize.js"></script>
+       <script src="scripts/app.js" type="application/javascript"></script>
+       <script src="scripts/MainController.js" type="application/javascript"></script>
+      
+     </head>
+
+        <body onload="onLoad()" ng-app="angularApp">
+            <div ng-controller="MainController">
+            <header class="container-fluid">
+                <h1>Visit Anytown, USA!</h1>
+            </header>
+        
+            <nav class="container-fluid">
+                <ul class="nav navbar-inverse navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="http://www.bing.com/search?q=amazing%20places">Amazing places</a></li>
+                    <li><a href="#contact">Contact</a><li>
+                </ul>
+            </nav>
+
+            <div  class="container-fluid">
+                <div class="row" style="border: 5px solid red;">
+           
+                    <section class="col-sm-6  col-sm-push-3"  style="border: 5px solid blue";>
+                    <!--<input id="smallnumber" type="text">
+                    <p id="numberMessage"></p>
+                    <button onclick="checkNumber()">Submit</button>-->
+
+                    <div class = "row">
+                        <div class = "col-sm-4">
+                             <input ng-model="smallnumber" type ="number">
+                             <p>{{theMessage}}</p>
+                             <button ng-click="checkNumber()"> Submit</button>
+                         </div>
+                         <div class="col-sm-8">
+                            <!--<label>FirstName</label><input type="text"/></br>
+                            <label>LastName</label><input type="text"/></br>
+                            <label>FullName</label><span></span>-->
+                            <label>FirstName</label><input ng-model = "User.firstName"  type="text" ng-model-options="{getterSetter : true}"/></br>
+                            <label>LastName</label><input ng-model = "User.lastName"  type="text" ng-model-options="{getterSetter : true}"/></br>
+                            <label>FullName</label><span ng-bind="User.fullName()"></span>
+                         </div>
+                    </div>
+
+                    <!--start remove article -->
+                    <div class="row">
+                        <article ng-repeat="article in Articles">
+                            <h2>{{ article.Title }}</h2>
+                            <div class="col-sm-3">
+                                <img ng-src="{{ article.Image }}" />
+                            </div>
+                            <div class="col-sm-9">
+                                <div ng-bind-html="article.Body"></div>
+                            </div>
+                        </article>
+                    </div>
+                        
+                        <!-- end remove article -->
+                    </section>
+
+
+                    <aside class="col-sm-3 col-sm-pull-6" style="border: 2px solid yellow";>
+                        <h2 class="title"> Things to Do</h2>
+                            <ul>
+                                <li><a href="http://www.bing.com/search?q=hiking">Hiking</a></li>
+                                <li><a href="http://www.bing.com/search?q=biking">Biking</a></li>
+                                <li><a href="http://www.bing.com/search?q=horseback">Horseback</a></li>
+                                <li><a href="http://www.bing.com/search?q=backpacking">Backpacking</a></li>
+                            </ul>
+                    </aside>
+
+                    <aside class="col-sm-3" style="border: 2px solid blue";>
+                        <h2>How to get here</h2> 
+                        <div class="<col-sm-3">
+                        <ol id="orderedlist">
+                            <li>By plane</li>
+                            <li>By Train</li>
+                            <li>By Automibile</li>
+                            <li>By Boat</li>
+                        </ol>
+                    </aside>
+                </div> <!-- row -->
+            </div><!-- aside container --> 
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3"></div>
+                    <div class="col-sm-6 col-sm-pull-3">
+                        <a name="contact">Contact Us</a>
+                        <p>Anytown Chamber of Commerce.
+                        123 Main st.
+                        Anytown, OH 43210.</p>
+                    </div>
+                </div>
+            </div>   
+
+            <footer class="container-fluid">
+                Copyright 2017
+                <!--<p id="timestamp"></p>-->
+                {{timestamp}}
+            </footer>
+        </div> <!-- add for angularjs-->
+    </body>
+</html>

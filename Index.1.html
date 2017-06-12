@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+      <title>my web page</title>
+        <link href="content/app.css" rel = "stylesheet"/> 
+        <link href="content/bootstrap.min_v3.3.7.css" rel = "stylesheet"/> 
+        <link href= "scripts/bootstrap.min_v3.3.7.js" rel = "text/javascript"/> 
+       
+       <script src="scripts/angular.min_v1.5.8.js"></script>
+       <script src="scripts/angular-sanitize.js"></script>
+       <script src="scripts/app.js" type="application/javascript"></script>
+       <script src="scripts/MainController.js" type="application/javascript"></script>
+      
+     </head>
+
+        <body onload="onLoad()" ng-app="angularApp">
+            <div ng-controller="MainController">
+            <header class="container-fluid">
+                <h1>Visit Anytown, USA!</h1>
+            </header>
+        
+            <nav class="container-fluid">
+                <ul class="nav navbar-inverse navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="http://www.bing.com/search?q=amazing%20places">Amazing places</a></li>
+                    <li><a href="#contact">Contact</a><li>
+                </ul>
+            </nav>
+
+            <div  class="container-fluid">
+                <div class="row" xstyle="border: 5px solid red";>
+           
+                    <section class="col-sm-6  col-sm-push-3"  xstyle="border: 5px solid blue";>
+                    <!--<input id="smallnumber" type="text">
+                    <p id="numberMessage"></p>
+                    <button onclick="checkNumber()">Submit</button>-->
+
+                    <div class = "row">
+                        <div class = "col-sm-4">
+                             <input ng-model="smallnumber" type ="number">
+                             <p>{{theMessage}}</p>
+                             <button ng-click="checkNumber()"> Submit</button>
+                         </div>
+                         <div class="col-sm-8">
+                            <!--<label>FirstName</label><input type="text"/></br>
+                            <label>LastName</label><input type="text"/></br>
+                            <label>FullName</label><span></span>-->
+                            <label>FirstName</label><input ng-model = "User.firstName"  type="text" ng-model-options="{getterSetter : true}"/></br>
+                            <label>LastName</label><input ng-model = "User.lastName"  type="text" ng-model-options="{getterSetter : true}"/></br>
+                            <label>FullName</label><span ng-bind="User.fullName()"></span>
+                         </div>
+                    </div>
+
+
+                        <!-- -->
+                        <div class="row">
+                            <article>
+                                <h2>Amazing Museums</h2>
+                                <div class="col-sm-3">
+                                    <img src="http://lorempixel.com/200/100/city/1"/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p>While most meuseum are a collection of old artifacts and stuff that no one is really interested in seeing , our meuseum are the best of the best.</p>
+                                    <p> You won't find anyting like these any where in the world. our museum rival that of  our closest competition including the Museum of Bad Art, the Paris Sewers Museum and  the Museum of Broken RElationships</p>
+                                    <p>Come check them out... the fun is waiting for you.</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <h2>Splash Anyone Waterpark</h2>
+                                <div class="col-sm-3">
+                                    <img src="http://lorempixel.com/200/100/city/2"/>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p>Our Waterpark is the best park in the Western World. Just south of interstate  2015, you'll find a sweet mix of Super Slide and lasy rivers.</p>
+                                    <p>If that wass't enought, we have 376 of the best food trucks in the state serving everything from fried gummmy bears to lemonade an pizza. Dont forget if you buy our collections edition souvenir water park  keepsake, you get free refills all year.</p>
+
+                                    <p>And we wouldn't be Slash Anyone without the rules about splashing... wait there are no rules.</p>
+                                </div>
+                            </article>
+
+                            <article>    
+                                <h2>Best Zoo in Town</h2>
+                                <div class="col-sm-3">
+                                    <img src="http://lorempixel.com/200/100/city/3"/>                 
+                                </div>
+                                <div class="col-sm-9">
+                                    <p>Finally, you won't want to miss out cuddly little zoo animals. lions, tigers and bears.. Oh my. Whe have the largest selection of born in capitiviey animals.</p>
+                                    <p>We did 't  wnat to take the natural habitat, so we just got them from the other zoos in the state</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+
+                    <aside class="col-sm-3 col-sm-pull-6" xstyle="border: 5px solid yellow";>
+                        <h2 class="title"> Things to Do</h2>
+                            <ul>
+                                <li><a href="http://www.bing.com/search?q=hiking">Hiking</a></li>
+                                <li><a href="http://www.bing.com/search?q=biking">Biking</a></li>
+                                <li><a href="http://www.bing.com/search?q=horseback">Horseback</a></li>
+                                <li><a href="http://www.bing.com/search?q=backpacking">Backpacking</a></li>
+                            </ul>
+                    </aside>
+
+                    <aside class="col-sm-3" xstyle="border: 5px solid blue";>
+                        <h2>How to get here</h2> 
+                        <div class="<col-sm-3">
+                        <ol id="orderedlist">
+                            <li>By plane</li>
+                            <li>By Train</li>
+                            <li>By Automibile</li>
+                            <li>By Boat</li>
+                        </ol>
+                    </aside>
+                </div> <!-- row -->
+            </div><!-- aside container --> 
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-3"></div>
+                    <div class="col-sm-6 col-sm-pull-3">
+                        <a name="contact">Contact Us</a>
+                        <p>Anytown Chamber of Commerce.
+                        123 Main st.
+                        Anytown, OH 43210.</p>
+                    </div>
+                </div>
+            </div>   
+
+            <footer class="container-fluid">
+                Copyright 2017
+                <!--<p id="timestamp"></p>-->
+                {{timestamp}}
+            </footer>
+        </div> <!-- add for angularjs-->
+    </body>
+</html>
